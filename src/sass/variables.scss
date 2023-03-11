@@ -1,0 +1,19 @@
+:root {
+  --font: "Syne", sans-serif;
+  --beige: #f1ece8;
+  --indigo: #7e71ff;
+  --grey: #1f1f1f;
+  --white: #fff;
+  --light-grey: #a5a19d;
+  --shadow: 6px 6px 0 0 var(--grey);
+  --shadow-indigo: 6px 6px 0 0 var(--indigo);
+  --medium-shadow-indigo: 10px 10px 0 0 var(--indigo);
+  --large-shadow: 40px 40px 0 0 var(--grey);
+  --large-shadow-indigo: 40px 40px 0 0 var(--indigo);
+  --shadow-initial: 0px 0px 0 0 var(--grey);
+  --shadow-indigo-initial: 0px 0px 0 0 var(var(--indigo));
+  --translate-inverse: translate3d(-4px, -4px, 0);
+  --translate-large-inverse: translate3d(-40px, -40px, 0);
+  --translate: translate3d(4px, 4px, 0);
+  --translate-large: translate3d(40px, 40px, 0);
+}
