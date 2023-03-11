@@ -1,0 +1,73 @@
+.button {
+  font-family: var(--font);
+  border: none;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+  transition: all 75ms;
+  flex-shrink: 0;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 2.8rem;
+  }
+
+  &.icon {
+    padding: 0.5rem;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  &.primary {
+    color: var(--grey);
+    background: var(--beige);
+    border: 2px solid var(--indigo);
+
+    &.text {
+      padding: 1.2rem 2rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      border-width: 4px;
+    }
+  }
+
+  &.secondary {
+    padding: 0.8rem 1.6rem;
+    color: var(--white);
+    background: var(--indigo);
+    border: 2px solid var(--grey);
+
+    @media screen and (min-width: 1024px) {
+      border-width: 4px;
+    }
+  }
+
+  &__arrow {
+    display: inline-flex;
+
+    > path {
+      transform-origin: center;
+
+      &.right {
+        transform: rotate(-90deg);
+      }
+
+      &.left {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
