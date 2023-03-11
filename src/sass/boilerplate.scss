@@ -1,0 +1,109 @@
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  color: var(--grey);
+}
+
+p {
+  margin: 0;
+  font-size: 2.2rem;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 3.2rem;
+  }
+}
+
+h1,
+h3,
+h4 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 5.8rem;
+  font-weight: 500;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 10rem;
+  }
+}
+
+h3 {
+  font-size: 3.2rem;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 6.8rem;
+  }
+}
+
+h4 {
+  font-size: 2.4rem;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 3.6rem;
+  }
+}
+
+.container {
+  padding-inline: 2rem;
+
+  @media screen and (min-width: 1024px) {
+    padding-inline: 10rem;
+  }
+}
+
+.hl {
+  color: var(--indigo);
+}
+
+.hide-for-mobile {
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
+}
+
+.hide-for-pc {
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+.link {
+  @media screen and (min-width: 768px) {
+    &:hover {
+      &::after {
+        width: 75%;
+      }
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      height: 2.5px;
+      width: 0%;
+      background: var(--indigo);
+      transition: width 300ms;
+    }
+  }
+}
+
+.privacy-screen {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--indigo);
+  z-index: 99;
+}
