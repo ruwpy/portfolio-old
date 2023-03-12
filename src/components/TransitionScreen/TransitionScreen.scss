@@ -1,0 +1,9 @@
+.transition-screen {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--indigo);
+  z-index: 99;
+}
