@@ -10,12 +10,14 @@ interface ButtonProps {
   direction?: "left" | "right" | "bottom";
   style: "primary" | "secondary" | "ternary";
   isArrow?: boolean;
+  size?: "big" | "small";
 }
 
 export default function Button({
   className,
   type,
   children,
+  size,
   isArrow,
   direction,
   style,
@@ -45,7 +47,7 @@ export default function Button({
       whileHover={"onHover"}
       initial={"initial"}
       whileTap={"initial"}
-      className={`button ${type} ${type !== "icon" && "text"} ${style}`}
+      className={`button ${type} ${type !== "icon" && "text"} ${size} ${style}`}
       {...props}
     >
       {type === "icon" && isArrow ? (
