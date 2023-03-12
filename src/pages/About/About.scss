@@ -1,0 +1,113 @@
+.about {
+  margin-bottom: 24rem;
+  padding-bottom: 12rem;
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 28rem;
+  }
+
+  &__heading {
+    padding-top: 12rem;
+    padding-bottom: 2rem;
+  }
+
+  &__text {
+    max-width: 90rem;
+    margin-bottom: 2rem;
+
+    &--looking {
+      max-width: 40rem;
+      padding-top: 2rem;
+
+      @media screen and (min-width: 768px) {
+        grid-row-start: 2;
+        grid-column-start: 1;
+      }
+    }
+  }
+
+  &__grid {
+    gap: 3rem;
+    padding-top: 4rem;
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, minmax(20rem, auto));
+    }
+  }
+  &__accent-box {
+    font-weight: 500;
+    padding: 1.5rem;
+    color: var(--beige);
+    background: var(--grey);
+
+    &--first {
+      @media screen and (min-width: 768px) {
+        grid-row-start: 1;
+        grid-column-start: 1;
+      }
+    }
+
+    &--second {
+      text-align: end;
+      width: auto;
+
+      @media screen and (min-width: 768px) {
+        grid-row-start: 1;
+        grid-column-start: 2;
+      }
+
+      > a {
+        display: inline-block;
+      }
+
+      @media screen and (min-width: 768px) {
+        width: 20rem;
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 6rem 0;
+    background: var(--grey);
+    z-index: -1;
+  }
+
+  &__cta-content {
+    cursor: pointer;
+    max-width: 90rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--beige);
+
+    @media screen and (min-width: 1024px) {
+      gap: 5rem;
+    }
+
+    > h2 {
+      font-size: 2.6rem;
+      width: 18rem;
+
+      @media screen and (min-width: 600px) {
+        width: 38rem;
+        font-size: 4rem;
+      }
+
+      @media screen and (min-width: 1024px) {
+        width: 60rem;
+        font-size: 6.4rem;
+      }
+    }
+  }
+}
