@@ -1,0 +1,17 @@
+.heading {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+
+  @media screen and (min-width: 1024px) {
+    padding-top: 6rem;
+  }
+
+  &.dark {
+    color: var(--beige);
+  }
+
+  > span {
+    display: inline-block;
+    min-width: 2rem;
+  }
+}
