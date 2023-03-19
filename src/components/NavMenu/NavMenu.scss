@@ -1,0 +1,109 @@
+.navmenu {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  pointer-events: initial;
+
+  &__content {
+    opacity: 1;
+    margin-inline: auto;
+    color: var(--beige);
+    max-width: 148rem;
+
+    @media screen and (min-width: 1024px) {
+      padding-inline: 7rem;
+    }
+  }
+
+  &__links {
+    display: grid;
+    padding-top: 12rem;
+
+    @media screen and (max-width: 767.97px) {
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media screen and (min-width: 768px) {
+      height: 35rem;
+      padding-top: unset;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.dark {
+      > .navmenu__link-container {
+        @media screen and (max-width: 767.97px) {
+          border-top: 2px solid rgba(black, 0.15);
+        }
+
+        @media screen and (min-width: 768px) {
+          &:not(:last-of-type) {
+            border-right: 2px solid rgba(black, 0.15);
+          }
+        }
+      }
+    }
+  }
+
+  &__link-container {
+    background: var(--grey);
+
+    &:nth-of-type(1) {
+      border-bottom-left-radius: 30px;
+    }
+
+    &:nth-of-type(3) {
+      border-bottom-right-radius: 30px;
+    }
+
+    @media screen and (max-width: 767.97px) {
+      border-top: 2px solid rgba(white, 0.1);
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: end;
+
+      &:not(:last-of-type) {
+        border-right: 2px solid rgba(white, 0.1);
+      }
+    }
+
+    &.dark {
+      background: var(--beige);
+      color: var(--grey);
+    }
+  }
+
+  &__link {
+    font-size: 2.6rem;
+    display: flex;
+    height: auto;
+    padding: 3rem;
+    align-items: end;
+
+    @media screen and (min-width: 768px) {
+      flex-grow: 0;
+    }
+  }
+
+  &__link-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+      flex-grow: 0;
+      gap: 2rem;
+    }
+  }
+
+  &__arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
