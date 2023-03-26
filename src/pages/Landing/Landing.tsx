@@ -1,10 +1,8 @@
 import "./Landing.scss";
 import Button from "../../components/Button/Button";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useIsPresent } from "framer-motion";
-import GithubSvg from "../../svgs/GithubSvg";
-import LinkedinSvg from "../../svgs/LinkedinSvg";
 import TransitionScreen from "../../components/TransitionScreen/TransitionScreen";
 import Navbar from "../../components/Navbar/Navbar";
 import { Variants } from "framer-motion";
@@ -16,11 +14,11 @@ export default function Landing() {
 
   const appearAnimation: Variants = {
     initial: {
-      y: -100,
+      y: 50,
       opacity: 0,
     },
     animate: (custom) => ({
-      transition: { delay: custom * 0.1 },
+      transition: { delay: custom * 0.15 },
       y: 0,
       opacity: 1,
     }),
@@ -28,26 +26,27 @@ export default function Landing() {
 
   return (
     <>
-      <main className="main primary">
-        <AnimatePresence>
-          <Navbar />
-          <motion.div
-            animate="animate"
-            initial="initial"
-            className="landing container"
-          >
+      <AnimatePresence>
+        <Navbar />
+        <m.main
+          key="landing-page"
+          animate="animate"
+          initial="initial"
+          className="main primary"
+        >
+          <div className="landing container">
             <div className="hero">
               <h1 className="hero__greating text-outline--light">
                 {greetingAnimated.map((word, index) => {
                   return (
-                    <motion.span
-                      custom={index}
+                    <m.span
+                      custom={index + 2}
                       variants={appearAnimation}
                       key={index}
                     >
                       {word.split("").map((letter, index) => {
                         return (
-                          <motion.span
+                          <m.span
                             key={index}
                             className="hero__letter"
                             whileHover={{
@@ -58,48 +57,30 @@ export default function Landing() {
                             }}
                           >
                             {letter}
-                          </motion.span>
+                          </m.span>
                         );
                       })}
-                    </motion.span>
+                    </m.span>
                   );
                 })}
               </h1>
-              <motion.p
+              <m.p
                 variants={appearAnimation}
-                custom={4}
+                custom={5}
                 className="hero__introduction"
               >
                 a <span className="hl">creative frontend developer</span> who{" "}
                 <br /> loves building <br /> amazing websites
-              </motion.p>
+              </m.p>
+              <m.div variants={appearAnimation} custom={6}>
+                <Link to="about">
+                  <Button buttonStyle="primarywdot">explore</Button>
+                </Link>
+              </m.div>
             </div>
-            <footer className="footer container">
-              <div className="footer__content">
-                <motion.div variants={appearAnimation} custom={5}>
-                  <Link to="about">
-                    <Button style="primary">explore</Button>
-                  </Link>
-                </motion.div>
-                <motion.div
-                  variants={appearAnimation}
-                  custom={6}
-                  className="footer__buttons"
-                >
-                  <Link to="https://github.com/ruwpy" target="_blank">
-                    <Button type="icon" style="primary">
-                      <GithubSvg />
-                    </Button>
-                  </Link>
-                  <Button type="icon" style="primary">
-                    <LinkedinSvg />
-                  </Button>
-                </motion.div>
-              </div>
-            </footer>
-          </motion.div>
-        </AnimatePresence>
-      </main>
+          </div>
+        </m.main>
+      </AnimatePresence>
       <TransitionScreen isPresent={isPresent} />
     </>
   );
