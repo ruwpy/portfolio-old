@@ -22,16 +22,18 @@
     column-gap: 2rem;
     margin-bottom: 2rem;
     font-weight: 600;
+    max-width: 30rem;
 
     @media screen and (min-width: 768px) {
       margin: 0;
+      max-width: unset;
     }
   }
 
   &__introduction {
-    font-size: 3.2rem;
+    font-size: 2.8rem;
     color: var(--beige);
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 
     @media screen and (min-width: 1024px) {
       font-size: 4rem;
