@@ -22,7 +22,9 @@ export default function Contact() {
           <Navbar isThemeDark />
           <div className="contact container">
             <Heading>CONTACT ME</Heading>
-            <p>wanna work with me? lets get in touch! </p>
+            <p className="contact__text">
+              wanna work with me? lets get in touch!{" "}
+            </p>
             <div className="contact__content">
               <div className="contact__form">
                 <input placeholder="your name" type="text" />

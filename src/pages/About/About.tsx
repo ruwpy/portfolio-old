@@ -50,7 +50,6 @@ export default function About() {
                   <Button buttonStyle="primarywdot">to contacts</Button>
                 </Link>
               </m.div>
-              <h2 className="heading">SKILLS & TOOLS</h2>
             </div>
           </div>
         </m.main>
