@@ -1,24 +1,15 @@
 import { ProjectProps } from "../components/Project/Project";
 
-import {
-  GifttoBar,
-  RecipeBar,
-  TypedashBar,
-  WthrBar,
-} from "../components/Svgs/barcodes";
+import { GifttoBar, RecipeBar, TypedashBar } from "../components/Svgs/barcodes";
 import {
   GifttoBraille,
   RecipeBraille,
   TypedashBraille,
-  WthrBraille,
 } from "../components/Svgs/braille";
-import {
-  GifttoQr,
-  RecipeQr,
-  TypedashQr,
-  WthrQr,
-} from "../components/Svgs/qrcodes";
+import { GifttoQr, RecipeQr, TypedashQr } from "../components/Svgs/qrcodes";
 import typedash from "/typedash.webp";
+import recipebook from "/recipebook.webp";
+import giftto from "/giftto.webp";
 
 const projectsData: ProjectProps[] = [
   {
@@ -27,7 +18,7 @@ const projectsData: ProjectProps[] = [
     barCode: <GifttoBar />,
     brailleName: <GifttoBraille />,
     endYear: 2022,
-    image: "",
+    image: giftto,
     demoLink: "https://giftto.ru",
   },
   {
@@ -36,19 +27,9 @@ const projectsData: ProjectProps[] = [
     barCode: <RecipeBar />,
     brailleName: <RecipeBraille />,
     endYear: 2022,
-    image: "",
+    image: recipebook,
     demoLink: "https://recipe-exchange-app.vercel.app/",
     codeLink: "https://github.com/ruwpy/recipebook",
-  },
-  {
-    name: "wthr3d",
-    qrCode: <WthrQr />,
-    barCode: <WthrBar />,
-    brailleName: <WthrBraille />,
-    endYear: 2023,
-    image: "",
-    demoLink: "a",
-    codeLink: "a",
   },
   {
     name: "typedash",
