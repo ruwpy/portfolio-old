@@ -2,21 +2,18 @@ import { ProjectProps } from "../components/Project/Project";
 
 import {
   GifttoBar,
-  LettreBar,
   RecipeBar,
   TypedashBar,
   WthrBar,
 } from "../components/Svgs/barcodes";
 import {
   GifttoBraille,
-  LettreBraille,
   RecipeBraille,
   TypedashBraille,
   WthrBraille,
 } from "../components/Svgs/braille";
 import {
   GifttoQr,
-  LettreQr,
   RecipeQr,
   TypedashQr,
   WthrQr,
@@ -32,16 +29,6 @@ const projectsData: ProjectProps[] = [
     endYear: 2022,
     image: "",
     demoLink: "https://giftto.ru",
-  },
-  {
-    name: "lettre",
-    qrCode: <LettreQr />,
-    barCode: <LettreBar />,
-    brailleName: <LettreBraille />,
-    endYear: 2022,
-    image: "",
-    demoLink: "https://lettre-app.vercel.app/",
-    codeLink: "https://github.com/ruwpy/lettre-app",
   },
   {
     name: "recipe book",
