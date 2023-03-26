@@ -1,37 +1,11 @@
 import { AnimatePresence, motion as m, Variants } from "framer-motion";
-import { SetStateAction, useEffect } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowSvg } from "../Svgs";
 import "./NavMenu.scss";
+import { useIsMobile } from "../../hooks/useIsMobile";
 
-const isMobile = window.innerWidth < 768;
 let linkAppear: Variants;
-
-if (!isMobile) {
-  linkAppear = {
-    initial: { y: "-100%" },
-    animate: (custom) => ({
-      y: 0,
-      transition: { duration: 0.3, delay: 0.08 * custom },
-    }),
-    exit: (custom) => ({
-      y: "-100%",
-      transition: { duration: 0.3, delay: 0.08 * custom },
-    }),
-  };
-} else {
-  linkAppear = {
-    initial: { x: "-100%" },
-    animate: (custom) => ({
-      x: 0,
-      transition: { duration: 0.3, delay: 0.08 * custom },
-    }),
-    exit: (custom) => ({
-      x: "-100%",
-      transition: { duration: 0.3, delay: 0.08 * custom },
-    }),
-  };
-}
 
 export default function NavMenu({
   isNavOpen,
@@ -42,9 +16,45 @@ export default function NavMenu({
   setIsNavOpen: React.Dispatch<SetStateAction<boolean>>;
   isThemeDark?: boolean;
 }) {
+  const isMobile = useIsMobile();
+
   useEffect(() => {
     document.body.style.overflow = isNavOpen ? "hidden" : "scroll";
   }, [isNavOpen]);
+
+  if (!isMobile) {
+    linkAppear = {
+      initial: { y: "-100%" },
+      animate: (custom) => ({
+        y: -20,
+        transition: {
+          type: "spring",
+          duration: 0.8,
+          delay: 0.08 * custom,
+        },
+      }),
+      exit: (custom) => ({
+        y: "-100%",
+        transition: {
+          type: "spring",
+          duration: 0.8,
+          delay: 0.08 * custom,
+        },
+      }),
+    };
+  } else {
+    linkAppear = {
+      initial: { x: "-100%" },
+      animate: (custom) => ({
+        x: 0,
+        transition: { type: "spring", duration: 0.8, delay: 0.08 * custom },
+      }),
+      exit: (custom) => ({
+        x: "-100%",
+        transition: { type: "spring", duration: 0.8, delay: 0.08 * custom },
+      }),
+    };
+  }
 
   const links = (
     <>
