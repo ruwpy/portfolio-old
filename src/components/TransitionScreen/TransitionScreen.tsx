@@ -1,6 +1,6 @@
 import "./TransitionScreen.scss";
 
-import { motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 export default function TransitionScreen({
   isPresent,
@@ -8,13 +8,13 @@ export default function TransitionScreen({
   isPresent: boolean;
 }) {
   return (
-    <motion.div
+    <m.div
       initial={{ scaleY: 1 }}
       animate={{
         scaleY: 0,
-        transition: { duration: 0.8, ease: "easeInOut" },
+        transition: { duration: 0.4, ease: "easeIn" },
       }}
-      exit={{ scaleY: 1, transition: { duration: 0.8, ease: "easeInOut" } }}
+      exit={{ scaleY: 1, transition: { duration: 0.4, ease: "easeOut" } }}
       style={{ originY: isPresent ? 1 : 0 }}
       className="transition-screen"
     />
