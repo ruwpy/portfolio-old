@@ -26,7 +26,7 @@ export default function Navbar({ isThemeDark }: { isThemeDark?: boolean }) {
   return (
     <div className="nav container">
       <div className="nav__content">
-        <Link to="/" className="nav__logo">
+        <Link to="/" className={`nav__logo ${isThemeDark && "dark"}`}>
           <LogoSvg isDark={isThemeDark} />
         </Link>
         <div className="nav__buttons">
@@ -35,7 +35,7 @@ export default function Navbar({ isThemeDark }: { isThemeDark?: boolean }) {
             initial="closed"
             variants={navAppear}
             custom={1}
-            className="nav__burger-container"
+            className={`nav__burger-container ${isThemeDark && "dark"}`}
             onClick={() => setIsNavOpen((prev) => !prev)}
           >
             <m.div

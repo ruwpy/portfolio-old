@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 20;
+  z-index: 10;
   pointer-events: none;
 
   &__burger-container {
@@ -14,20 +14,31 @@
     cursor: pointer;
     padding: 1.5rem;
     pointer-events: initial;
+    background: var(--grey);
+    border-radius: 20px;
+
+    &.dark {
+      background: var(--beige);
+    }
   }
 
   &__logo {
     z-index: 20;
     display: flex;
     align-items: center;
+    justify-content: center;
     pointer-events: initial;
+    background: var(--grey);
+    border-radius: 20px;
+    width: 6.2rem;
+
+    &.dark {
+      background: var(--beige);
+    }
 
     > svg {
       height: 5rem;
       width: 5rem;
-    }
-    &.dark {
-      color: var(--grey);
     }
   }
 
