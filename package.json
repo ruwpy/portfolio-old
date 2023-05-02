@@ -10,13 +10,12 @@
   },
   "dependencies": {
     "@motionone/utils": "^10.15.1",
-    "@react-email/render": "^0.0.7",
     "framer-motion": "^10.0.1",
-    "nodemailer": "^6.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.2",
-    "sass": "^1.58.3"
+    "sass": "^1.58.3",
+    "vite-tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@types/nodemailer": "^6.4.7",
