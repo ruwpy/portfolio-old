@@ -28,14 +28,16 @@ export default function NavMenu({
       animate: (custom) => ({
         y: -20,
         transition: {
-          duration: 0.3,
+          type: "spring",
+          duration: 0.8,
           delay: 0.08 * custom,
         },
       }),
       exit: (custom) => ({
         y: "-100%",
         transition: {
-          duration: 0.3,
+          type: "spring",
+          duration: 0.8,
           delay: 0.08 * custom,
         },
       }),
