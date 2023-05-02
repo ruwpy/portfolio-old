@@ -28,16 +28,14 @@ export default function NavMenu({
       animate: (custom) => ({
         y: -20,
         transition: {
-          type: "spring",
-          duration: 0.8,
+          duration: 0.3,
           delay: 0.08 * custom,
         },
       }),
       exit: (custom) => ({
         y: "-100%",
         transition: {
-          type: "spring",
-          duration: 0.8,
+          duration: 0.3,
           delay: 0.08 * custom,
         },
       }),
@@ -100,12 +98,12 @@ export default function NavMenu({
   );
 
   return (
-    <AnimatePresence mode="sync">
+    <AnimatePresence mode="wait">
       {isNavOpen && (
         <m.nav
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { delay: 0.3 } }}
+          exit={{ opacity: 0, transition: { delay: 0.5 } }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="navmenu"
           onClick={() => setIsNavOpen(false)}
@@ -118,9 +116,7 @@ export default function NavMenu({
             className={`navmenu__content`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className={`navmenu__links ${isThemeDark && "dark"}`}>
-              {links}
-            </div>
+            <div className={`navmenu__links ${isThemeDark && "dark"}`}>{links}</div>
           </m.div>
         </m.nav>
       )}
